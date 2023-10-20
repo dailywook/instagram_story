@@ -65,8 +65,8 @@ function drawSlide(evt) {
   slideTab.addEventListener('touchstart', slideOnMouseDown);
   slideTab.addEventListener('touchmove', slideOnMouseMove);
   gsap.to('.slider_bar.active', 0.2, {delay:2, x:-25, opacity: 0.4, ease:'power2.inOut'})
-}
 
+}
 
 const touchCheck = 0;
 
@@ -80,8 +80,10 @@ function slideOnMouseDown(evt) {
 function slideOnMouseMove(evt) {
   console.log('touchCheck')
   gsap.to('.slider_bar.active', 0.1, {x:0, opacity: 1, ease:'power2.inOut'})
-  // drawSlide();
+    // drawSlide();
   // touch 이후 다시 drawslide로 이동해서 딜레이 이후 동작 
+
+
 }
 
 
@@ -105,7 +107,7 @@ function onMouseMove (evt) {
   console.log('touchMoveX = ', stX);
   // 좌표는 가져왔고 좌표를 대입해 작성한다
   makeDot()
-  // 태그들의 속성을 없앤다 - 고유 동장을 정지시킨다
+  // 태그들의 속성을 없앤다 - 고유 동작을 정지시킨다
   evt.preventDefault()
   let drawTab = document.querySelector('.draw_contents');
   drawTab.classList.remove('active')
@@ -128,10 +130,24 @@ function makeDot() {
   const drawingCanvas = document.querySelector('.canvas')
   let div = document.createElement('div');
   div.className = 'drawdot'
+  //  위에서 선언을 했으니 그 부분에 넣는 것은 필수 (drawingCanvas) - 여기다가 넣어라
+  drawingCanvas.appendChild(div)
+
+  const element = document.querySelector('#myRange');
+  // 현재 값 가져오기
+  const rangeValue = element.value;
+  console.log('slider =', rangeValue)
+  // slide 값구했고
+  // 여기에 선언한 것들을 넣어주고 새로 생성된 div에 반영되게끔 해줘야한다. div = 새로 생성된 drawdot뭉치
+  gsap.to(div, 0, {x:stX, y:stY, opacity: 1, scale: rangeValue})
   
-  document.body.appendChild(div)
-  gsap.to(div, 0, {x:stX, y:stY, z:-8, opacity: 1})
+  // 여기다가 scale값을 넣으니 .drawdot이라는 클래스명에 다 반영이 되는것이다
+  // drawdot은 dot기준 클래스인지 변화하면 안되는 클래스
+
+
+  // ColorChip 반영
   
+
   }
 
 

@@ -1,3 +1,5 @@
+/* pointer-events 꼭 기억하기
+하단에 있는걸 클릭하고 싶을때 필수 */
 
 .body{
   width: 375px;
@@ -51,8 +53,7 @@
   width: 100%;
   height: 812px;
   opacity: 0;
-  
-
+  pointer-events: none;
 }
 
 .top_btn{
@@ -356,7 +357,7 @@
   top: 0;
   scale: 1;
   transition: opacity 0.3s ease;
-  /* display: inline-block; */
+  pointer-events: none;
 }
 
 
@@ -369,6 +370,7 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  pointer-events: auto;
 }
 
 .pen_btn {
@@ -447,6 +449,7 @@
   opacity: 0.3;
   transition-delay: 0.3s;
   transition: 0.3s ease;
+  pointer-events: auto;
 }
 
 .slider_bar.active{
@@ -456,6 +459,7 @@
   width: 24px;
   height: 252px;
   opacity: 1;
+  pointer-events: auto;
 }
 
 .slider{
@@ -463,7 +467,7 @@
   top: 115px;
   left: -125px;
   -webkit-appearance: none; /* 기본 CSS 스타일을 적용하지 않기 위해서 */
-  transform: rotate(90deg);
+  transform: rotate(-90deg);
   width: 270px; /* 슬라이더 길이 */
   height: 10px; /* 슬라이더 두께 */
   border-radius: 5px; /* 슬라이더 모서리를 약간 둥글게 */
@@ -482,19 +486,6 @@
 }
 
 
-
-/* .circle_btn{
-  position: absolute;
-  width: 25px;
-  height: 25px;
-  background-color: #FFF;
-  border-radius: 25px;
-}
-
-.scale_progress{
-  width: 24px;
-  height: 252px;
-} */
 
 .draw_contents .bottom_tab{
   width: 100%;
@@ -523,6 +514,7 @@
   height: 44px;
   margin-left: 13px;
   margin-top: 15px;
+  pointer-events: auto;
 }
 
 .swiper-slide.swiper-slide-active { 
@@ -761,8 +753,9 @@
 
 
 .drawdot{
-  width: 30px;
-  height: 30px;
+  width: 1px;
+  height: 1px;
+  scale: 1;
   border-radius: 30px;
   background-color: white;
   opacity: 0;
