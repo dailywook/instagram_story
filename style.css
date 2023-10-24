@@ -145,7 +145,7 @@
   scale: 1;
 }
 
-.draw{
+.more_btn_pop .draw{
   display: flex;
   margin-left: 14px;
   margin-right: 14px;
