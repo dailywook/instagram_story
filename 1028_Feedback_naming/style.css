@@ -1,11 +1,12 @@
 /* pointer-events 꼭 기억하기
 하단에 있는걸 클릭하고 싶을때 필수 */
-.html{
+
+html {
   background-color: black;
 }
-
 .body{
   width: 375px;
+
 }
 .instagram {
   width: 100%;
@@ -50,9 +51,10 @@
   height: 812px;
   opacity: 1;
   transition: opacity 0.5s;
+  
 }
 
-.instagram_content.active{
+.instagram_content.draw{
   width: 100%;
   height: 812px;
   opacity: 0;
@@ -129,7 +131,7 @@
   justify-content: center;
   opacity: 0;
   scale: 0.4;
-  transition: 0.2s ease-out;
+  transition: all 0.2s ease-out;
   transform-origin: right top;
 }
 
@@ -148,7 +150,7 @@
   scale: 1;
 }
 
-.draw{
+.more_btn_pop .draw{
   display: flex;
   margin-left: 14px;
   margin-right: 14px;
@@ -158,8 +160,7 @@
   flex-wrap: nowrap;
 }
 
-
-.draw .text{
+.more_btn_pop .draw .text{
   color: #FFF;
   font-family: Inter;
   font-size: 10px;
@@ -169,13 +170,13 @@
   margin-right: auto;
 }
 
-.draw .icon{
+.more_btn_pop .draw .icon{
   width: fit-content;
   height: 100%;
   object-fit: cover;
 }
 
-.draw .icon img{
+.more_btn_pop .draw .icon img{
   width: 16px;
   height: 15.5px;
 }
@@ -348,9 +349,10 @@
   position: absolute;
   top: 0;
   opacity: 0;
-  scale: 0;
   /* display: none; */
   transition: opacity 0.3s ease;
+  pointer-events: none;
+  visibility: hidden;
 }
 
 .draw_contents.active{
@@ -362,6 +364,7 @@
   scale: 1;
   transition: opacity 0.3s ease;
   pointer-events: none;
+  visibility: visible;
 }
 
 
@@ -568,7 +571,7 @@
   margin-right: 18px;
 }
 
-.color{
+.color_white{
   width: 20px;
   height: 20px;
   background-color: #FFF;
