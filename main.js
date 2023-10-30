@@ -7,24 +7,32 @@ window.onload = function() {
   
 function init() {
   console.log("init")
+  // init 출력 확인
 
   const moreBtn = document.querySelector('.more_btn')
+  // moreBtn은 도큐먼트에서 '.more_btn'을 선택한다.
   moreBtn.addEventListener('click', morePop);
+  // moreBtn에 클릭이벤트를 준다 -> 클릭을 했을때 morePop함수를 호출하도록
   
 
 // Swipe 인터렉션
   const swiper = new Swiper(".swiper", {
+    // Swiper Script 호출한다.
     pagination: {
       el: ".swiper-pagination",
+      // Pagination에 관한 Swiper Script 호출
       },
     }
   )};
 
 
   function changeDrawMode() {
-    // init은 로드용이기 때문에 화면이 돌아가려면, 새로 지정한 함수로 돌려야 한다. 시작점과 반환점이 다르다.
+    // init은 로드용이기 때문에 화면이 돌아가려면, 새로 지정한 함수로 돌려야 한다. 시작점과 반환점이 다르다. 그러므로 다시 돌아 갔을때
+    // 처음 셋팅과 같은 함수를 보여줘야한다.
   let drawTab = document.querySelector('.draw_contents');
+  // drawTab은 도큐먼트에서 '.more_btn'을 선택한다.
   drawTab.classList.remove('active')
+  // drawTab은 classList에 remove 시킨다.
   let drawBtn = document.querySelector('.instagram_content');
   drawBtn.classList.remove('active')
   let slideBar = document.querySelector('.slider_bar');
@@ -33,7 +41,6 @@ function init() {
 
   const moreBtn = document.querySelector('.more_btn')
   moreBtn.addEventListener('click', morePop);
-
   }
 
 
